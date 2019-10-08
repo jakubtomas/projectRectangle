@@ -745,14 +745,19 @@ public class FreeClass {
                     break;
                 case 8:
                     System.out.println("August");
+                    break;
                 case 9:
                     System.out.println("September");
+                    break;
                 case 10:
                     System.out.println("October");
+                    break;
                 case 11:
                     System.out.println("November");
+                    break;
                 case 12:
                     System.out.println("December");
+
 
                 default:
                     System.out.println("you add bad number");

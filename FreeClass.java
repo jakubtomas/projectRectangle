@@ -712,6 +712,59 @@ public class FreeClass {
 
     }
 
+    public void test33() {
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+
+
+
+
+        System.out.println("Add number of month ");
+        int month = myObj.nextInt();
+
+        if (month > 0 && month < 13) {
+            switch (month) {
+                case 1:
+                    System.out.println("January");
+                    break;
+                case 2:
+                    System.out.println("February");
+                    break;
+                case 3:
+                    System.out.println("March");
+                    break;
+                case 4:
+                    System.out.println("April");
+                    break;
+                case 5:
+                    System.out.println("May");
+                    break;
+                case 6:
+                    System.out.println("June");
+                    break;
+                case 7:
+                    System.out.println("July");
+                    break;
+                case 8:
+                    System.out.println("August");
+                case 9:
+                    System.out.println("September");
+                case 10:
+                    System.out.println("October");
+                case 11:
+                    System.out.println("November");
+                case 12:
+                    System.out.println("December");
+
+            }
+
+
+        }else {
+            System.out.println("you add bad number");
+        }
+
+
+    }
+
 
 
 

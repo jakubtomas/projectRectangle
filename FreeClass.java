@@ -762,6 +762,7 @@ public class FreeClass {
                 default:
                     System.out.println("you add bad number");
 
+
             }// this is koment
 
 

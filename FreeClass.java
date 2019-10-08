@@ -833,10 +833,14 @@ public class FreeClass {
 
     public void test35() {
         // riesenie kvadraticke rovnice
+        // quadratic equation
 
 
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-
+        System.out.println("Hello I am program for solving quadratic equation");
+        System.out.println(" ");
+        System.out.println("Programmer Jakub Tomáš Contact   tomasjakub@gmail.com");
+        System.out.println(" ");
         System.out.println("Add number a, b ,c  ");
 
         double a = myObj.nextDouble();
@@ -850,16 +854,16 @@ public class FreeClass {
 
         if (a != 0) {
 
-            // vypocet diskriminant
+            // vypocet diskrimi
             d = (b*b)-4*a*c;
-            System.out.println(d);
+            System.out.println( " discriminant is " + d);
 
             if (d == 0) {
                 x = -b / (2 * a);
                 System.out.println(x);
 
             } else if (d < 0) {
-                System.out.println("this dont have korene kv. rovnice");
+                System.out.println("this dont have root quadratic equation");
             } else {
                 x1  =   (-b+Math.sqrt(d))/2*a;
                 x2  =   (-b-Math.sqrt(d))/2*a;
@@ -871,7 +875,7 @@ public class FreeClass {
 
 
         } else {
-            System.out.println("this is not kvadraticka rovnica");
+            System.out.println("this is not quadratic equation");
         }
     }
 

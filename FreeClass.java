@@ -771,6 +771,110 @@ public class FreeClass {
 
     }
 
+    public void test34() {
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+
+
+
+
+        System.out.println("Add number of month ");
+        int month = myObj.nextInt();
+
+        switch (month) {
+
+            case 1:
+                System.out.println("January");
+                break;
+            case 2:
+                System.out.println("February");
+                break;
+            case 3:
+                System.out.println("March");
+                break;
+            case 4:
+                System.out.println("April");
+                break;
+            case 5:
+                System.out.println("May");
+                break;
+            case 6:
+                System.out.println("June");
+                break;
+            case 7:
+                System.out.println("July");
+                break;
+            case 8:
+                System.out.println("August");
+                break;
+            case 9:
+                System.out.println("September");
+                break;
+            case 10:
+                System.out.println("October");
+                break;
+            case 11:
+                System.out.println("November");
+                break;
+            case 12:
+                System.out.println("December");
+
+
+            default:
+                System.out.println("you add bad number");
+
+
+        }// this is koment
+
+
+
+
+
+    }
+
+    public void test35() {
+        // riesenie kvadraticke rovnice
+
+
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+
+        System.out.println("Add number a, b ,c  ");
+
+        double a = myObj.nextDouble();
+        double b = myObj.nextDouble();
+        double c = myObj.nextDouble();
+        double d = 0;
+        double x;
+        double x1;
+        double x2;
+
+
+        if (a != 0) {
+
+            // vypocet diskriminant
+            d = (b*b)-4*a*c;
+            System.out.println(d);
+
+            if (d == 0) {
+                x = -b / (2 * a);
+                System.out.println(x);
+
+            } else if (d < 0) {
+                System.out.println("this dont have korene kv. rovnice");
+            } else {
+                x1  =   (-b+Math.sqrt(d))/2*a;
+                x2  =   (-b-Math.sqrt(d))/2*a;
+
+                System.out.println(x1);
+                System.out.println(" ");
+                System.out.println(x2);
+            }
+
+
+        } else {
+            System.out.println("this is not kvadraticka rovnica");
+        }
+    }
+
 
 
 

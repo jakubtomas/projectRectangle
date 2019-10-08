@@ -721,7 +721,6 @@ public class FreeClass {
         System.out.println("Add number of month ");
         int month = myObj.nextInt();
 
-        if (month > 0 && month < 13) {
             switch (month) {
                 case 1:
                     System.out.println("January");
@@ -755,12 +754,13 @@ public class FreeClass {
                 case 12:
                     System.out.println("December");
 
+                default:
+                    System.out.println("you add bad number");
+
             }
 
 
-        }else {
-            System.out.println("you add bad number");
-        }
+
 
 
     }

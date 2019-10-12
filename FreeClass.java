@@ -1033,6 +1033,42 @@ public class FreeClass {
 
     }
 
+    public String generatePassword(int n, boolean rules){
+        if(rules==true && (n<6 || n>30) )  // kontrola dlzky hesla
+            n = 10;
+
+        String passwd="";
+        int count=0;
+        int digits=0;
+        int upper=0;
+        int lower=0;
+        if(rules==false){
+            digits=upper=lower=1;
+        }
+        int num=0;
+        Random rnd=new Random();
+        do{
+            int type=rnd.nextInt(3);
+            switch(type){
+                case 0: num=rnd.nextInt(10)+'0'; digits++; break;
+                case 1: num=rnd.nextInt(26)+'A'; upper++; break;
+                case 2: num=rnd.nextInt(26)+'a'; lower++; break;
+            }
+            char c=(char)num;
+            passwd+=c;
+            count++;
+            if(count==n && (digits==0 || upper==0 || lower==0)){
+                count=digits=upper=lower=0;
+                passwd="";
+            }
+
+        } while(count<n);
+
+        return passwd;
+    }
+
+
+
     /**
      * @author Jakub Tomáš
      * @date 12.10.2019

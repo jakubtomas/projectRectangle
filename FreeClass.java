@@ -1079,7 +1079,119 @@ public class FreeClass {
      */
 
 
+    public void givehoroscop(int day, int month) {
 
+        Random rand = new Random();
+
+        System.out.println("First Enter day and second enter your month: ");
+        int x = 0;
+        // control month  if he has 30 or 31 days
+        // control april  dont need control ist detail
+        int maxDay = 31;
+        if (month == 4 || month == 6 || month == 9 || month == 11) {
+            maxDay = 30;
+        }
+        if (day < 1 || day > maxDay || month > 12 || month < 1) {
+            System.out.println("message error  bad input values");
+            month = 0;
+        }
+
+
+        switch (month) {
+
+            case 1:if (day > 20 && day < 32) {
+                System.out.println("your horoscop is vodnar  ");
+            } else  {
+                System.out.println("you are kozorožec ");
+            }
+                break;
+            case 2:
+                if (day > 19 && day < 32) {
+                    System.out.println("your horoscop is fish  ");
+                } else {
+                    System.out.println("you are vodnar ");
+                }
+                break;
+            case 3:     // baran
+                if (day > 20 && day < 32) {
+                    System.out.println("your horoscop is baran ");
+                } else {
+                    System.out.println("you are fish");
+                }
+                break;
+            case 4:     // byk
+                if (day > 20 && day < 32) {
+                    System.out.println("your horoscop is byk ");
+                } else {
+                    System.out.println("you are baran");
+                }
+                break;
+            case 5:         // bliženci
+                if (day > 21 && day < 32) {
+                    System.out.println("your horoscop is blíženci ");
+                } else {
+                    System.out.println("you are byk");
+                }
+                break;
+            case 6:
+                if (day > 21 && day < 32) {
+                    System.out.println("your horoscop is rak ");
+                } else {
+                    System.out.println("you are bliženci ");
+                }
+                break;
+            case 7: // lion  23.7. ----23.8
+                if (day > 22 && day < 32) {
+                    System.out.println("your horoscop is lion  ");
+                } else {
+                    System.out.println("you are rak ");
+                }
+                break;
+            case 8:    // panna  24. 8
+                if (day > 23 && day < 32) {
+                    System.out.println("your horoscop is panna   ");
+                } else {
+                    System.out.println("you are lion ");
+                }
+                break;
+            case 9:// vahy 24.9- 23.10
+                if (day > 23 && day < 32) {
+                    System.out.println("your horoscop is vahy  ");
+                } else {
+                    System.out.println("you are panna ");
+                }
+
+
+                break;
+            case 10: // skorpion  24.10 ---22.11
+                if (day > 23 && day < 32) {
+                    System.out.println("your horoscop is skorpion  ");
+                } else {
+                    System.out.println("you are vahy ");
+                }
+                break;
+            case 11:
+                if (day > 22 && day < 32) {
+                    System.out.println("your horoscop is strelec  ");
+                } else {
+                    System.out.println("you are skorpion ");
+                }
+                break;
+            case 12:  // kozorožec 22.12 --- 20.01
+                if (day > 21 && day < 32) {
+                    System.out.println("your horoscop is kozorožec  ");
+                } else {
+                    System.out.println("you are strelec ");
+                }
+                break;
+
+
+
+            default:
+                System.out.println("bad day or month  ");
+        }
+
+    }
 
 
 }

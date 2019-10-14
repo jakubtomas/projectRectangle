@@ -1242,14 +1242,17 @@ public class FreeClass {
             System.out.println("your result is no corect ");
         }*/
 
+        System.out.println(" Helllo  Enter your name ");
+        String  name = myObj.nextLine();
+        System.out.println(" Hello " +  name + " your exercises is ready okey ");
+        System.out.println("========");
 
         while (k <= 10) {
-            System.out.println("cislo prikladu  " +  k++);
+            System.out.println("cislo prikladu  " +  k);
 
             int a = rand.nextInt(91) + 10;
             int b = rand.nextInt(91) + 10;
 
-            System.out.println(a + "   " + b);
             int value = rand.nextInt(4); // generuje cislo
 
             System.out.println(value);

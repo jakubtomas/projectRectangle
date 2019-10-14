@@ -617,7 +617,6 @@ public class FreeClass {
         */
 
         // zadaj cislo
-
         System.out.println("Zadaj cislo ");
         //int value = myObj.nextInt();
         //System.out.println("tvoje cislo je " + value);
@@ -1033,49 +1032,73 @@ public class FreeClass {
 
     }
 
-    public String generatePassword(int n, boolean rules){
-        if(rules==true && (n<6 || n>30) )  // kontrola dlzky hesla
+
+    /**
+     * @param n     length of the password
+     * @param rules if true, then 6<length<31, minvat least one  digit,  upper,  lower letter
+     * @return
+     * @author Jakub tomas
+     * @date 13.10.2019
+     * @description this method generate random password
+     */
+    //
+    public String generatePassword(int n, boolean rules) {
+        if (rules == true && (n < 6 || n > 30))  // kontrola dlzky hesla
             n = 10;
 
-        String passwd="";
-        int count=0;
-        int digits=0;
-        int upper=0;
-        int lower=0;
-        if(rules==false){
-            digits=upper=lower=1;
+        String passwd = "";
+        int count = 0;
+        int digits = 0;
+        int upper = 0;
+        int lower = 0;
+
+
+        if (rules == false) {
+            digits = upper = lower = 1;   // sposobi že sa nemusi vygenerovat každe case
         }
-        int num=0;
-        Random rnd=new Random();
-        do{
-            int type=rnd.nextInt(3);
-            switch(type){
-                case 0: num=rnd.nextInt(10)+'0'; digits++; break;
-                case 1: num=rnd.nextInt(26)+'A'; upper++; break;
-                case 2: num=rnd.nextInt(26)+'a'; lower++; break;
+        int num = 0;
+        Random rnd = new Random();  // pridanie kniznice na generovanie
+        do {
+            int type = rnd.nextInt(3);    // generovanie cisla od 0 do 2
+            switch (type) {                     // porovnavanie vygenerovaneho cisla
+                case 0:
+                    num = rnd.nextInt(10) + '0';
+                    digits++;
+                    break;  // digits ++ vieme kolkokrat mamae case 0
+                case 1:
+                    num = rnd.nextInt(26) + 'A';
+                    upper++;
+                    break;
+                case 2:
+                    num = rnd.nextInt(26) + 'a';
+                    lower++;
+                    break;
             }
-            char c=(char)num;
-            passwd+=c;
-            count++;
-            if(count==n && (digits==0 || upper==0 || lower==0)){
-                count=digits=upper=lower=0;
-                passwd="";
+            char c = (char) num;            // prevod cisla do znaku
+            passwd += c;                  // priradenie znakudo hesla
+            count++;                       // zvysenie hodnoty count o 1 kvoli tomu aby sme vedeli kolko znakov mam
+
+            // pocet znakov,, kontrola či mame s každeho case 0 , 1 , 2  .. velke male pismena aj cisla
+            //ak nie tak count digits upper lower nastavy na nulu password na prazdny string
+            // to sposoby dalsie opakovanie while pretoze podmienka bude stale platit
+            if (count == n && (digits == 0 || upper == 0 || lower == 0)) {
+                count = digits = upper = lower = 0; // vynulovanie
+                passwd = "";  // password string prazdne
             }
 
-        } while(count<n);
+        } while (count < n); /// kym pocet znakov count bude mensi ako n stale sa bude generovat
 
         return passwd;
     }
 
 
-
     /**
+     * @param day   this is your day of birth
+     * @param month this is day of birth
+     * @return
      * @author Jakub Tomáš
      * @date 12.10.2019
-     * @param day this is your day of birth
-     * @param month this is day of birth
      * @description this method solve horoscop with data day and month
-     * @return
      */
 
 
@@ -1099,11 +1122,12 @@ public class FreeClass {
 
         switch (month) {
 
-            case 1:if (day > 20 && day < 32) {
-                System.out.println("your horoscop is vodnar  ");
-            } else  {
-                System.out.println("you are kozorožec ");
-            }
+            case 1:
+                if (day > 20 && day < 32) {
+                    System.out.println("your horoscop is vodnar  ");
+                } else {
+                    System.out.println("you are kozorožec ");
+                }
                 break;
             case 2:
                 if (day > 19 && day < 32) {
@@ -1186,12 +1210,96 @@ public class FreeClass {
                 break;
 
 
-
             default:
                 System.out.println("bad day or month  ");
         }
 
     }//
+
+
+    public void test44() { // vygeneruj 2 cisla 2ciferne    vypis ich
+
+        Scanner myObj = new Scanner(System.in);
+
+
+        Random rand = new Random();
+
+        int x = 0;
+        int c = 0;
+        int k = 1;
+        int corect = 0;
+        int bad = 0;
+
+
+        //System.out.println("what is corect " + a +" +  " + b);
+
+        //System.out.println("enter your result");
+
+
+        /*if (x == c) {
+            System.out.println("your result is corect");
+        } else {
+            System.out.println("your result is no corect ");
+        }*/
+
+
+        while (k <= 10) {
+            System.out.println("cislo prikladu  " +  k++);
+
+            int a = rand.nextInt(91) + 10;
+            int b = rand.nextInt(91) + 10;
+
+            System.out.println(a + "   " + b);
+            int value = rand.nextInt(4); // generuje cislo
+
+            System.out.println(value);
+
+            switch (value) {
+
+
+               /* c = a + b;
+                System.out.println("what is your result  " + a + " + " + b);
+                x = myObj.nextInt();
+                break;*/
+                case 0:
+                case 1:
+                    c = a + b;
+                    System.out.println("what is your result " + a + " + " + b);
+
+                    break;
+
+                case 2:
+                    c = a - b;
+                    System.out.println("what is your result " + a + " - " + b);
+                    break;
+
+                case 3:
+                    c = a * b;
+                    System.out.println("what is your result " + a + " * " + b);
+                    break;
+
+
+            }
+
+            x = myObj.nextInt();
+
+            if (x == c) {
+                System.out.println("your result is correct");
+
+                corect++;
+            } else {
+                System.out.println("your result is bad ");
+                bad++;
+            }
+            System.out.println("=================================");
+            k++;
+        }
+
+        System.out.println(" pocet spravnych je " + corect + "  pocet percetn " + corect * 10);
+        System.out.println(" pocet nespravnych je " + bad + " pocet percent " + bad * 10);
+
+
+    }
 
 
 }

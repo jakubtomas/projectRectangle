@@ -1276,7 +1276,7 @@ public class FreeClass {
                 case 3:
                     c = a * b;
                     System.out.println("what is your result " + a + " * " + b);
-                    break;
+                    break; // comentar
 
 
             }
